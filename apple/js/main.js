@@ -42,9 +42,10 @@
     // 각 스크롤 섹션의 높이 세팅
     for(let i = 0; i < sceneInfo.length; i++){
       sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
-      sceneInfo[i].objs.container.style.heigt = `${sceneInfo[i].scrollHeight}px`;
+      sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
     }
     console.log(sceneInfo);
   }
+  window.addEventListener('resize', setLayout); // 윈도우 사이즈가 바뀔 때 높이값 수정
   setLayout();
 })();
