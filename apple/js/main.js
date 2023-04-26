@@ -1,4 +1,7 @@
 (()=>{
+
+  let yOffset = 0; // window.pageYOffset 대신 사용할 변수
+
   const sceneInfo = [
     {
       // 0
@@ -44,8 +47,16 @@
       sceneInfo[i].scrollHeight = sceneInfo[i].heightNum * window.innerHeight;
       sceneInfo[i].objs.container.style.height = `${sceneInfo[i].scrollHeight}px`;
     }
-    console.log(sceneInfo);
   }
+
+  function scrollLoop(){
+
+  }
+
   window.addEventListener('resize', setLayout); // 윈도우 사이즈가 바뀔 때 높이값 수정
   setLayout();
+  window.addEventListener('scroll', ()=>{
+    yOffset = window.pageYOffset; // 현재 스크롤한 위치
+    scrollLoop();
+  })
 })();
